@@ -6,15 +6,28 @@ interface RegForm {
   age: number;
 }
 
-function App() {
+//const values = { userName: 'Vasyl', age: 18 }
 
+function App() {
   const { register, formState: { errors, isValid }, handleSubmit, reset } = useForm<RegForm>({
       mode: "onBlur",
+      //mode: "onChange",
+      //mode: "onTouched",
+      //mode: "all",
+      //reValidateMode: "onSubmit",
+      //reValidateMode: "onBlur",
+      //defaultValues: { userName: 'Kyrylo', age: 25 },
+      //values,
+      //resetOptions: { keepDirtyValues: true, keepErrors: true },
+      //criteriaMode: "all",
+      //shouldFocusError: false,
+      //delayError: 1000,
   });
 
   const onSubmit: SubmitHandler<RegForm> = data => {
     console.log(data);
-    reset()
+    console.log(values);
+    reset() //!потрібно закоментувати, коли перевіряємо reValidateMode
   }
 
   return (
