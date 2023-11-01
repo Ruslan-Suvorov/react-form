@@ -26,7 +26,6 @@ function App() {
 
   const onSubmit: SubmitHandler<RegForm> = data => {
     console.log(data);
-    console.log(values);
     reset() //!потрібно закоментувати, коли перевіряємо reValidateMode
   }
 
